@@ -1,0 +1,25 @@
+.menu-cards{
+    height: fit-content;
+    border: none;
+}
+/* .waiter-cards{
+    height: fit-content;
+    border: 1px solid black;
+} */
+.dish-img{
+    position: absolute;
+    width: 20vh;
+    left: -5vh;
+    top: -15vh;
+    z-index: 1;
+
+}
+body{
+    background-color: rgb(230, 230, 230);
+    background-image: url(../imgs/dine\ 1.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.qr-window{
+    backdrop-filter: blur(10px);
+}

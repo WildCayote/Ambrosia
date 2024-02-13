@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Owner Update Menu</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/owner-see-menu.css">
+  <script src='./js/owner.html.js'></script>
+</head>
+
+<body onload="getMenu(); getWaiters()">
+  <div class="container position-relative">
+    <div class="row position-relative ">
+
+      <!-- added a log out button -->
+      <a class="position-absolute btn btn-outline-dark bg-light" style="top: 8px; right: 8px; width: fit-content;"
+        href="../Sign-in.html">
+        Log Out
+      </a>
+
+
+      <div class="menu-cards col-12 col-md-4 pb-5 d-flex flex-column position-relative shadow-lg bg-light rounded"
+        style="margin-top: 70px;">
+        <div class="text-center m-3 fw-bold"> Your Menus Will Be <br> Shown Here</div>
+        <img src="../imgs/Ziti-plate-above 1.png" class="dish-img" alt="">
+        <div class="card border-1 col-12 shadow-lg p-3 bg-white rounded pb-2">
+          <div class="card-body pb-2">
+            <h5 class="card-title fs-6" id="menu-title-1">Menu Title</h5>
+            <p class="card-text text-secondary" id="menu-description-1">Description of Menu 1</p>
+            <button class="btn btn-dark p-1 ps-2 pe-2 mb-2 fw-bold" id="get-qr-1" onclick="toggleQR()">
+              Get QR
+            </button>
+            <a href="owner-edit.html" onclick="toMenuEdit()" class="btn btn-outline-dark p-1 ps-2 pe-2 mb-2 fw-bold">Edit Menu</a>
+            <br>
+            <button class="btn btn-danger p-1 ps-2 pe-2 mb-2 fw-bold" id="delete-menu" onclick="DeleteMenu()">
+              Delete Menu
+            </button>
+            <br>
+          </div>
+
+        </div>
+        <!-- <div class="mt-3">
+                <button class="btn btn-outline-dark">Create New +</button>
+              </div> -->
+
+
+      </div>
+      <div class="col-12 col-md-4 d-flex flex-column position-relative" style=" margin: 20px; margin-top: 70px;">
+        <div
+          class="create-form col-12 d-flex justify-content-center align-content-center align-items-center mb-5 rounded overflow-hidden">
+          <div class="d-flex flex-column justify-content-center align-items-center">
+            <div class="shadow-lg  mb-5 bg-white rounded">
+              <div class="d-flex justify-content-between p-2 border-0 rounded-top bg-light">
+                <div class="d-flex flex-column">
+                  <div class="font-weight-bold text-center py-2 fs-2">Create New</div>
+                  <div class="text-secondary p-2" style="font-size: medium;">
+                    Enter the necessary information about your menu here
+                  </div>
+                </div>
+                <div class="text-dark fs-4 p-2 pt-0 pb-0">
+                  &#43;
+                </div>
+              </div>
+              <div class="position-relative pb-5 pe-1">
+                <form class="mb-2 me-2" id="create new menu">
+                  <div class="form-group p-3">
+                    <label for="menu-title">Title</label>
+                    <input type="text" class="form-control border-0 border-bottom" id="menu-title" required>
+                  </div>
+                  <div class="form-group p-3">
+                    <label for="menu-description">Description</label>
+                    <input type="text" class="form-control border-1" style="height: 100px;" id="menu-description"
+                      required>
+                  </div>
+                  <button class="m-5 mt-0 mb-0 p-1 ps-3 pe-3 btn btn-outline-dark" onclick="CreateMenu()"
+                    type="submit">Create</button>
+                </form>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-3 pb-2 d-flex flex-column position-relative shadow-lg 
+            bg-light border rounded" style="margin-top: 70px; height: fit-content;" id="waiter-show">
+        <div class="text-center m-3 fw-bold">Your Waiters Will Be Shown Here</div>
+        <div id="waiter-show">
+        </div>
+        <div class="col-12 d-flex flex-column justify-content-start mt-2 align-items-center">
+          <div class="shadow-lg  mb-5 bg-white rounded" style="padding: 4%;">
+            <div class="d-flex justify-content-between p-2 border-0 rounded-top">
+              <div class="d-flex flex-column">
+                <div class="fw-bold">Add New Waiter</div>
+              </div>
+              <div class="text-light fs-4 p-2 pt-0 pb-0">
+                &#43;
+              </div>
+            </div>
+            <div class="position-relative pb-5 pe-1">
+              <form class="mb-2 me-2" id="create-drink-1">
+                <div class="form-group mb-2">
+                  <label for="waiter-name">Username</label>
+                  <input type="text" class="form-control border-1" id="waiter-name" required>
+                </div>
+                <div class="form-group mb-2">
+                  <label for="waiter-password">Password</label>
+                  <input type="password" class="form-control border-1" id="waiter-password">
+                </div>
+                <button class="float-end btn btn-outline-dark position-absolute bottom-0 end-0" onclick="addWaiter()"
+                  type="submit">Add</button>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+
+  </div>
+  </div>
+  <div id="qr-window" class="qr-window d-none container position-absolute top-0 left-0 vh-100" style="z-index: 1000;">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-12 d-flex d-flex justify-content-center align-items-center "
+        style="width:80%; max-width: 850px; padding: 20px; z-index: 1001;">
+        <div class="d-flex justify-content-center border align-items-center flex-column p-4 bg-light"
+          style="width: 80%; max-width: 650px; border-color: black;">
+          <div class="form-group d-flex justify-content-center align-items-center">
+            <label for="name" class="text-dark fw-bold fs-5">Table Number: </label>
+            <input type="number" class="form-control w-25 p-0 m-2 border-dark-subtle" min="1" id="table-number"
+              value="1">
+          </div>
+          <br>
+          <div class="QR-img border rounded pt-0 " id="QR-image" style="width: 100%; height: 60vh;"></div>
+          <br>
+          <div>
+            <button class="btn btn-dark" onclick="getQR()">Get</button>
+            <button class="btn btn-outline-dark ms-4" onclick="toggleQR()">Return</button>
+            <button class="btn btn-outline-primary ms-4" onclick="printQR()">Print</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+  </script>
+
+</body>
+
+</html>

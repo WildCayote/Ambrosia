@@ -1,0 +1,27 @@
+:root{
+    --background-color: rgb(230, 230, 230);
+    --text_color: #000;
+    --logo_color: #9aa5c8;
+}
+body{
+    /* background: var(--background_color); */
+    overflow: auto;
+    background: url(../imgs/backgnd-owner.png);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+
+
+    
+}
+.create-img{
+    position: absolute;
+    bottom: -20px;
+    right: -20px;
+    width: 150px; 
+    border-top-right-radius: 600px; 
+    border-top-left-radius: 1000px; 
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;   
+}

@@ -1,0 +1,369 @@
+@import url('https://fonts.googleapis.com/css2?family=Baumans&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root{
+    --bg__color: rgb(230,230,230);
+    --text_color: #000;
+    --logo_color: #9aa5c8;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container-css{
+    background: var(--bg__color);
+    width: 100vw;
+    height: 125vh;
+}
+
+.container-css nav{
+    /* border: 1px solid black; */
+    height: 10%;
+    position: relative;
+    top: 50px;
+    margin: 0 50px;
+    z-index: 10;
+}
+
+.container-css nav .logo{
+    width: 15%;
+    height: 100%;
+    /* border: 1px solid black; */
+    display: flex;
+    cursor: pointer;
+}
+
+.container-css nav .logo img{
+    width: 30%;
+}
+
+.container-css nav .logo p{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    font-family: 'Baumans', cursive;
+    font-size: 40px;
+}
+
+.container-css nav .logo p span{
+    font-family: 'Baumans', cursive;
+    color: var(--logo_color);
+}
+
+.container-css nav .navigation{
+    width: 75%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 20%;
+    display: flex;
+    flex-wrap: nowrap;
+    /* border: 1px solid black; */
+}
+
+.container-css nav .navigation ul{
+    list-style: none;
+    display: flex;
+    margin-left: 280px;
+}
+
+.container-css nav .navigation ul li{
+    padding: 27px 30px;
+}
+
+.container-css nav .navigation ul li a{
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--text_color);
+}
+
+.container-css nav .navigation ul li a.active{
+    color: #4e5469;
+    transform: scale(1.05);
+}
+
+.container-css nav .navigation ul li a:hover{
+    transform: scale(1.05);
+    color: #282828;
+}
+
+.container-css nav .hamburger{
+    width: 5%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    display: none;
+    cursor: pointer;
+}
+
+.container-css nav .hamburger img{
+    width: 80%;
+}
+
+.container-css .main_content{
+    display: flex;
+    /* border: 1px solid black; */
+    width: 94.8%;
+    height: 85%;
+    margin: 0 50px;
+    position: relative;
+    top: 20px;
+}
+
+.container-css .main_content .text_container{
+    /* border: 1px solid black; */
+    min-width: 50%;
+}
+
+.container-css .main_content .text_container img{
+    width: 30%;
+    position: absolute;
+    left: 150px;
+}
+
+.container-css .main_content .text_container h1{
+    font-size: 45px;
+    font-weight: 500;
+    position: absolute;
+    top: 60%;
+    right: 60%;
+    white-space: nowrap;
+}
+
+.container-css .main_content .text_container p{
+    font-size: 30px;
+    font-weight: 400;
+    position: absolute;
+    top: 71%;
+    left: 8%;
+}
+
+.container-css .main_content .text_container a{
+    /* text-decoration: none; */
+    position: absolute;
+    top: 80%;
+    left: 18%;
+    /* color: #fff; */
+    /* font-size: 20px; */
+    /* padding: 5px 15px; */
+    border-radius: 5px;
+    /* background: var(--text_color); */
+}
+
+.container-css .main_content .img_container{
+    /* border: 1px solid black; */
+    width: 50%;
+}
+
+.container-css .main_content .img_container img{
+    width: 50%;
+    position: absolute;
+    top: 0px;
+}
+
+@media screen and (max-width: 1245px){
+    .container-css nav .navigation ul{
+        margin-left: 180px;
+    }
+
+    .container-css .main_content .text_container h1 {
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 1112px){
+    .container-css nav .navigation ul {
+        margin-left: 110px;
+    }
+}
+
+@media screen and (max-width: 1025px){
+    .container-css nav .navigation ul{
+        margin-left: 110px;
+    }
+
+    .container-css nav .logo p{
+        left: 8%;
+    }
+
+    .container-css nav .logo{
+        width: 27%;
+    }
+
+    .container-css .main_content .text_container img{
+        left: 100px;
+        top: 50px;
+    }
+
+    .container-css .main_content .text_container h1{
+        font-size: 40px;
+        top: 55%;
+        left: 5%;
+        white-space: nowrap;
+    }
+
+    .container-css .main_content .text_container p{
+        font-size: 25px;
+        top: 66%;
+        left: 5%;
+    }
+
+    /* .container-css .main_content .text_container a{
+        top: 75%;
+        left: 16%;
+    } */
+
+    .container-css .main_content .img_container img{
+        width: 60%;
+        left: 350px;
+    }
+}
+
+@media screen and (max-width: 1019px){
+    .container-css nav .navigation ul li a{
+        font-size: 23px;
+    }
+}
+
+@media screen and (max-width: 983px){
+    .container-css nav .navigation ul{
+        margin-left: 90px;
+    }
+}
+
+@media screen and (max-width: 956px){
+    .container-css nav .navigation ul{
+        margin-left: 70px;
+    }
+}
+
+@media screen and (max-width: 929px){
+    .container-css nav .navigation ul li a {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 769px){
+    .container-css .main_content .text_container img{
+        display: none;
+    }
+
+    .container-css nav .navigation {
+        display: none;
+    }
+
+    .container-css .main_content .img_container img{
+        width: 80%;
+        left: 150px;
+    }
+
+    .container-css .main_content .text_container h1{
+        top: 60%;
+        left: 5%;
+    }
+
+    .container-css .main_content .text_container p{
+        top: 70%;
+        left: 12%;
+    }
+
+    /* .container-css .main_content .text_container a{
+        top: 80%;
+        left: 25%;
+    } */
+
+    .container-css nav .hamburger{
+        width: 8%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .container-css nav .logo{
+        width: 33%;
+    }
+
+    .container-css nav .logo p{
+        left: 10%;
+    }
+}
+
+@media screen and (max-width: 426px){
+    .container-css nav .logo p{
+        left: 25%;
+        font-size: 33px;
+    }
+
+    .container-css nav{
+        height: 8%;
+    }
+
+    .container-css nav .logo{
+        width: 67%;
+    }
+
+    .container-css nav .logo img{
+        width: 40%;
+    }
+
+    .container-css .main_content .img_container img{
+        width: 116%;
+        left: -74px;
+    }
+
+    .container-css .main_content .text_container h1{
+        top: 60%;
+        left: 5%;
+        font-size: 30px;
+    }
+
+    .container-css .main_content .text_container p{
+        top: 68%;
+        left: 12%;
+        font-size: 19px;
+    }
+
+    /* .container-css .main_content .text_container a{
+        top: 74%;
+        left: 30%;
+    } */
+}
+
+@media screen and (max-width: 321px){
+    .container-css nav .logo{
+        display: none;
+    }
+
+    .container-css nav .hamburger{
+        width: 20%;
+    }
+
+    .container-css .main_content .img_container img{
+        width: 118%;
+    }
+
+    .container-css .main_content .text_container h1{
+        top: 50%;
+        left: 0%;
+        font-size: 25px;
+    }
+
+    .container-css .main_content .text_container p{
+        top: 57%;
+        left: 10%;
+        font-size: 15px;
+    }
+
+    /* .container-css .main_content .text_container a {
+        top: 68%;
+        left: 26%;
+    } */
+}
